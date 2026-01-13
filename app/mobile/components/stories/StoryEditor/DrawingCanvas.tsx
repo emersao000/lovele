@@ -1,11 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import {
   View,
   StyleSheet,
-  Dimensions,
-  Canvas as RNCanvas,
   PanResponder,
-  GestureResponderEvent,
 } from 'react-native';
 import { DrawingPath } from '@/stores/storyEditorStore';
 import Svg, { Polyline } from 'react-native-svg';
@@ -30,36 +27,37 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
   canvasHeight,
 }) => {
   const currentPathRef = useRef<Array<{ x: number; y: number }>>([]);
-  const panResponder = useRef(
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => isDrawing,
-      onMoveShouldSetPanResponder: () => isDrawing,
-      onPanResponderGrant: (evt) => {
-        if (isDrawing) {
+
+  const panResponder = useMemo(
+    () =>
+      PanResponder.create({
+        onStartShouldSetPanResponder: () => isDrawing,
+        onMoveShouldSetPanResponder: () => isDrawing,
+        onPanResponderGrant: (evt) => {
           const { pageX, pageY } = evt.nativeEvent;
           currentPathRef.current = [{ x: pageX, y: pageY }];
-        }
-      },
-      onPanResponderMove: (evt) => {
-        if (isDrawing && currentPathRef.current) {
-          const { pageX, pageY } = evt.nativeEvent;
-          currentPathRef.current.push({ x: pageX, y: pageY });
-        }
-      },
-      onPanResponderRelease: () => {
-        if (isDrawing && currentPathRef.current.length > 0) {
-          const newPath: DrawingPath = {
-            id: `drawing-${Date.now()}`,
-            points: currentPathRef.current,
-            color,
-            width: lineWidth,
-          };
-          onAddPath(newPath);
-          currentPathRef.current = [];
-        }
-      },
-    })
-  ).current;
+        },
+        onPanResponderMove: (evt) => {
+          if (currentPathRef.current) {
+            const { pageX, pageY } = evt.nativeEvent;
+            currentPathRef.current.push({ x: pageX, y: pageY });
+          }
+        },
+        onPanResponderRelease: () => {
+          if (currentPathRef.current.length > 0) {
+            const newPath: DrawingPath = {
+              id: `drawing-${Date.now()}`,
+              points: currentPathRef.current,
+              color,
+              width: lineWidth,
+            };
+            onAddPath(newPath);
+            currentPathRef.current = [];
+          }
+        },
+      }),
+    [isDrawing, color, lineWidth, onAddPath]
+  ).panHandlers;
 
   return (
     <View
