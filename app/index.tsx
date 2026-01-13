@@ -113,26 +113,19 @@ export default function Home() {
             <View style={styles.stepNumber}>
               <Text style={styles.stepNumberText}>3</Text>
             </View>
-            <Text style={styles.stepText}>
-              Preview and customize settings
-            </Text>
+            <Text style={styles.stepText}>Preview and customize settings</Text>
           </View>
           <View style={styles.infoStep}>
             <View style={styles.stepNumber}>
               <Text style={styles.stepNumberText}>4</Text>
             </View>
-            <Text style={styles.stepText}>
-              Publish to your story
-            </Text>
+            <Text style={styles.stepText}>Publish to your story</Text>
           </View>
         </View>
       </ScrollView>
 
       {/* FAB */}
-      <Pressable
-        style={styles.fab}
-        onPress={() => router.push('/stories')}
-      >
+      <Pressable style={styles.fab} onPress={() => router.push('/stories')}>
         <MaterialIcons name="add" size={28} color="#FFFFFF" />
       </Pressable>
     </SafeAreaView>

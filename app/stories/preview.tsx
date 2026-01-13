@@ -28,7 +28,9 @@ export default function StoryPreviewPage() {
   const [allowReplies, setAllowReplies] = useState(true);
 
   const story: StoryData = storyData
-    ? JSON.parse(typeof storyData === 'string' ? storyData : JSON.stringify(storyData))
+    ? JSON.parse(
+        typeof storyData === 'string' ? storyData : JSON.stringify(storyData),
+      )
     : {};
 
   const handleBack = () => {
@@ -145,16 +147,10 @@ export default function StoryPreviewPage() {
 
       {/* Footer */}
       <View style={styles.footer}>
-        <Pressable
-          style={styles.backButton}
-          onPress={handleBack}
-        >
+        <Pressable style={styles.backButton} onPress={handleBack}>
           <Text style={styles.backButtonText}>Back</Text>
         </Pressable>
-        <Pressable
-          style={styles.publishButton}
-          onPress={handlePublish}
-        >
+        <Pressable style={styles.publishButton} onPress={handlePublish}>
           <MaterialIcons name="cloud-upload" size={20} color="#FFFFFF" />
           <Text style={styles.publishButtonText}>Publish</Text>
         </Pressable>

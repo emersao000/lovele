@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Dimensions, SafeAreaView, Alert } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  SafeAreaView,
+  Alert,
+} from 'react-native';
 import { useStoryEditorStore } from '@/stores/storyEditorStore';
 import { Canvas } from './Canvas';
 import { Toolbar } from './Toolbar';
@@ -20,7 +26,9 @@ export const StoryEditor: React.FC<StoryEditorProps> = ({
   onCancel,
 }) => {
   const [showTextInput, setShowTextInput] = useState(false);
-  const [currentTextEditId, setCurrentTextEditId] = useState<string | null>(null);
+  const [currentTextEditId, setCurrentTextEditId] = useState<string | null>(
+    null,
+  );
 
   const {
     // State
@@ -147,7 +155,8 @@ export const StoryEditor: React.FC<StoryEditorProps> = ({
         visible={showFontPicker}
         currentFont={
           selectedTextId
-            ? textElements.find((t) => t.id === selectedTextId)?.fontFamily || 'system'
+            ? textElements.find((t) => t.id === selectedTextId)?.fontFamily ||
+              'system'
             : 'system'
         }
         currentFontSize={
@@ -157,7 +166,8 @@ export const StoryEditor: React.FC<StoryEditorProps> = ({
         }
         currentTextAlign={
           selectedTextId
-            ? textElements.find((t) => t.id === selectedTextId)?.textAlign || 'center'
+            ? textElements.find((t) => t.id === selectedTextId)?.textAlign ||
+              'center'
             : 'center'
         }
         onFontSelect={(font) => {

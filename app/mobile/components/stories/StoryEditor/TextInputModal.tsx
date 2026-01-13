@@ -70,18 +70,12 @@ export const TextInputModal: React.FC<TextInputModalProps> = ({
               maxLength={500}
               numberOfLines={5}
             />
-            <Text style={styles.charCount}>
-              {text.length}/500
-            </Text>
+            <Text style={styles.charCount}>{text.length}/500</Text>
 
             <View style={styles.tips}>
               <Text style={styles.tipsTitle}>Tips:</Text>
-              <Text style={styles.tipItem}>
-                • Keep text short and readable
-              </Text>
-              <Text style={styles.tipItem}>
-                • Use contrast with background
-              </Text>
+              <Text style={styles.tipItem}>• Keep text short and readable</Text>
+              <Text style={styles.tipItem}>• Use contrast with background</Text>
               <Text style={styles.tipItem}>
                 • Add multiple text layers for effect
               </Text>
@@ -89,10 +83,7 @@ export const TextInputModal: React.FC<TextInputModalProps> = ({
           </View>
 
           <View style={styles.buttons}>
-            <Pressable
-              style={styles.cancelButton}
-              onPress={onClose}
-            >
+            <Pressable style={styles.cancelButton} onPress={onClose}>
               <Text style={styles.cancelButtonText}>Cancel</Text>
             </Pressable>
             <Pressable

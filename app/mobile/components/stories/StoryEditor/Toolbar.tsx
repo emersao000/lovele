@@ -52,10 +52,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
     const isActive = tool && currentTool === tool;
     return (
       <Pressable
-        style={[
-          styles.toolButton,
-          isActive && styles.activeToolButton,
-        ]}
+        style={[styles.toolButton, isActive && styles.activeToolButton]}
         onPress={onPress || (() => tool && onToolChange(tool))}
       >
         <MaterialIcons
@@ -63,12 +60,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           size={24}
           color={isActive ? '#FFFFFF' : '#333333'}
         />
-        <Text
-          style={[
-            styles.toolLabel,
-            isActive && styles.activeToolLabel,
-          ]}
-        >
+        <Text style={[styles.toolLabel, isActive && styles.activeToolLabel]}>
           {label}
         </Text>
       </Pressable>
@@ -106,60 +98,28 @@ export const Toolbar: React.FC<ToolbarProps> = ({
         />
 
         {/* Drawing Tool */}
-        <ToolButton
-          icon="edit"
-          label="Draw"
-          tool="drawing"
-        />
+        <ToolButton icon="edit" label="Draw" tool="drawing" />
 
         {/* Eraser Tool */}
-        <ToolButton
-          icon="brush"
-          label="Erase"
-          tool="eraser"
-        />
+        <ToolButton icon="brush" label="Erase" tool="eraser" />
 
         {/* Color Picker */}
-        <ToolButton
-          icon="palette"
-          label="Color"
-          onPress={onColorPicker}
-        />
+        <ToolButton icon="palette" label="Color" onPress={onColorPicker} />
 
         {/* Background/Media */}
-        <ToolButton
-          icon="image"
-          label="Image"
-          onPress={onMediaPicker}
-        />
+        <ToolButton icon="image" label="Image" onPress={onMediaPicker} />
 
         {/* Filters */}
-        <ToolButton
-          icon="filter-alt"
-          label="Filter"
-          onPress={onFilterPicker}
-        />
+        <ToolButton icon="filter-alt" label="Filter" onPress={onFilterPicker} />
 
         {/* Undo */}
-        <ToolButton
-          icon="undo"
-          label="Undo"
-          onPress={onUndo}
-        />
+        <ToolButton icon="undo" label="Undo" onPress={onUndo} />
 
         {/* Redo */}
-        <ToolButton
-          icon="redo"
-          label="Redo"
-          onPress={onRedo}
-        />
+        <ToolButton icon="redo" label="Redo" onPress={onRedo} />
 
         {/* Clear Drawing */}
-        <ToolButton
-          icon="delete"
-          label="Clear"
-          onPress={onClearDrawing}
-        />
+        <ToolButton icon="delete" label="Clear" onPress={onClearDrawing} />
       </ScrollView>
     </BlurView>
   );

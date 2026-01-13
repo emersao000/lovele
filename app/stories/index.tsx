@@ -161,7 +161,9 @@ export default function StoriesPage() {
                     </View>
                     <View style={styles.storyItemInfo}>
                       <Text style={styles.storyItemName}>{story.userName}</Text>
-                      <Text style={styles.storyItemTime}>{story.timestamp}</Text>
+                      <Text style={styles.storyItemTime}>
+                        {story.timestamp}
+                      </Text>
                     </View>
                   </View>
                   <MaterialIcons

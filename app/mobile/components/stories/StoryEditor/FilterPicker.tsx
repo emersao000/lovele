@@ -162,10 +162,7 @@ export const FilterPicker: React.FC<FilterPickerProps> = ({
           </View>
         </ScrollView>
 
-        <Pressable
-          style={styles.confirmButton}
-          onPress={onClose}
-        >
+        <Pressable style={styles.confirmButton} onPress={onClose}>
           <Text style={styles.confirmButtonText}>Done</Text>
         </Pressable>
       </SafeAreaView>

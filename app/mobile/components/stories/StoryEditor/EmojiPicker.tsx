@@ -18,14 +18,181 @@ interface EmojiPickerProps {
 }
 
 const EMOJI_CATEGORIES = {
-  'Smileys': ['😀', '😃', '😄', '😁', '😆', '😅', '🤣', '😂', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😚', '😙'],
-  'Gestures': ['👋', '🤚', '🖐', '✋', '🖖', '👌', '🤌', '🤏', '✌', '🤞', '🫰', '🤟', '🤘', '🤙', '👍', '👎', '✊', '👊', '🤛', '🤜'],
-  'Hearts': ['❤', '🧡', '💛', '💚', '💙', '💜', '🖤', '🤍', '🤎', '💔', '💕', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '💌'],
-  'Animals': ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁', '🐮', '🐷', '🐸', '🐵', '🙈', '🙉', '🙊', '🐒', '🐔'],
-  'Food': ['🍎', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🍈', '🍒', '🍑', '🥭', '🍍', '🥥', '🥑', '🍅', '🍆', '🥒', '🥬', '🥦', '🌶'],
-  'Activities': ['🎈', '🎉', '🎊', '🎁', '🎗', '🏆', '🏅', '🥇', '🥈', '🥉', '⚽', '⚾', '🥎', '🎾', '🏐', '🏈', '🏉', '🥏', '🎳', '🎣'],
-  'Travel': ['✈', '🚁', '🚂', '🚃', '🚄', '🚅', '🚆', '🚇', '🚈', '🚉', '🚊', '🚝', '🚞', '🚋', '🚌', '🚎', '🚐', '🚑', '🚒', '🚓'],
-  'Objects': ['⌚', '📱', '📲', '💻', '⌨', '🖥', '🖨', '🖱', '🖲', '🕹', '🗜', '💽', '💾', '💿', '📀', '📼', '📷', '📸', '📹', '🎥'],
+  Smileys: [
+    '😀',
+    '😃',
+    '😄',
+    '😁',
+    '😆',
+    '😅',
+    '🤣',
+    '😂',
+    '😊',
+    '😇',
+    '🙂',
+    '🙃',
+    '😉',
+    '😌',
+    '😍',
+    '🥰',
+    '😘',
+    '😗',
+    '😚',
+    '😙',
+  ],
+  Gestures: [
+    '👋',
+    '🤚',
+    '🖐',
+    '✋',
+    '🖖',
+    '👌',
+    '🤌',
+    '🤏',
+    '✌',
+    '🤞',
+    '🫰',
+    '🤟',
+    '🤘',
+    '🤙',
+    '👍',
+    '👎',
+    '✊',
+    '👊',
+    '🤛',
+    '🤜',
+  ],
+  Hearts: [
+    '❤',
+    '🧡',
+    '💛',
+    '💚',
+    '💙',
+    '💜',
+    '🖤',
+    '🤍',
+    '🤎',
+    '💔',
+    '💕',
+    '💞',
+    '💓',
+    '💗',
+    '💖',
+    '💘',
+    '💝',
+    '💟',
+    '💌',
+  ],
+  Animals: [
+    '🐶',
+    '🐱',
+    '🐭',
+    '🐹',
+    '🐰',
+    '🦊',
+    '🐻',
+    '🐼',
+    '🐨',
+    '🐯',
+    '🦁',
+    '🐮',
+    '🐷',
+    '🐸',
+    '🐵',
+    '🙈',
+    '🙉',
+    '🙊',
+    '🐒',
+    '🐔',
+  ],
+  Food: [
+    '🍎',
+    '🍊',
+    '🍋',
+    '🍌',
+    '🍉',
+    '🍇',
+    '🍓',
+    '🍈',
+    '🍒',
+    '🍑',
+    '🥭',
+    '🍍',
+    '🥥',
+    '🥑',
+    '🍅',
+    '🍆',
+    '🥒',
+    '🥬',
+    '🥦',
+    '🌶',
+  ],
+  Activities: [
+    '🎈',
+    '🎉',
+    '🎊',
+    '🎁',
+    '🎗',
+    '🏆',
+    '🏅',
+    '🥇',
+    '🥈',
+    '🥉',
+    '⚽',
+    '⚾',
+    '🥎',
+    '🎾',
+    '🏐',
+    '🏈',
+    '🏉',
+    '🥏',
+    '🎳',
+    '🎣',
+  ],
+  Travel: [
+    '✈',
+    '🚁',
+    '🚂',
+    '🚃',
+    '🚄',
+    '🚅',
+    '🚆',
+    '🚇',
+    '🚈',
+    '🚉',
+    '🚊',
+    '🚝',
+    '🚞',
+    '🚋',
+    '🚌',
+    '🚎',
+    '🚐',
+    '🚑',
+    '🚒',
+    '🚓',
+  ],
+  Objects: [
+    '⌚',
+    '📱',
+    '📲',
+    '💻',
+    '⌨',
+    '🖥',
+    '🖨',
+    '🖱',
+    '🖲',
+    '🕹',
+    '🗜',
+    '💽',
+    '💾',
+    '💿',
+    '📀',
+    '📼',
+    '📷',
+    '📸',
+    '📹',
+    '🎥',
+  ],
 };
 
 interface Category {
@@ -41,12 +208,11 @@ export const EmojiPicker: React.FC<EmojiPickerProps> = ({
   const [activeCategory, setActiveCategory] = React.useState('Smileys');
 
   const categories: Category[] = Object.entries(EMOJI_CATEGORIES).map(
-    ([name, emojis]) => ({ name, emojis })
+    ([name, emojis]) => ({ name, emojis }),
   );
 
-  const activeEmojis = EMOJI_CATEGORIES[
-    activeCategory as keyof typeof EMOJI_CATEGORIES
-  ] || [];
+  const activeEmojis =
+    EMOJI_CATEGORIES[activeCategory as keyof typeof EMOJI_CATEGORIES] || [];
 
   return (
     <Modal
@@ -99,7 +265,8 @@ export const EmojiPicker: React.FC<EmojiPickerProps> = ({
               <Text
                 style={[
                   styles.categoryTabText,
-                  activeCategory === category.name && styles.categoryTabTextActive,
+                  activeCategory === category.name &&
+                    styles.categoryTabTextActive,
                 ]}
               >
                 {category.name}
@@ -108,10 +275,7 @@ export const EmojiPicker: React.FC<EmojiPickerProps> = ({
           ))}
         </ScrollView>
 
-        <Pressable
-          style={styles.confirmButton}
-          onPress={onClose}
-        >
+        <Pressable style={styles.confirmButton} onPress={onClose}>
           <Text style={styles.confirmButtonText}>Close</Text>
         </Pressable>
       </SafeAreaView>

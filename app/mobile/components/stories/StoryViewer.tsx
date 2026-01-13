@@ -93,10 +93,7 @@ export const StoryViewer: React.FC<StoryViewerProps> = ({
           />
         ) : (
           <View
-            style={[
-              styles.backgroundImage,
-              { backgroundColor: '#667eea' },
-            ]}
+            style={[styles.backgroundImage, { backgroundColor: '#667eea' }]}
           />
         )}
       </View>

@@ -47,7 +47,13 @@ export interface StoryEditorState {
   // Background/Media
   backgroundImage: ImagePickerAsset | null;
   backgroundColor: string;
-  backgroundFilter: 'none' | 'blackwhite' | 'vintage' | 'sepia' | 'cool' | 'warm';
+  backgroundFilter:
+    | 'none'
+    | 'blackwhite'
+    | 'vintage'
+    | 'sepia'
+    | 'cool'
+    | 'warm';
   backgroundFilterIntensity: number;
 
   // Text elements
@@ -155,14 +161,11 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
   ...initialState,
 
   // Background actions
-  setBackgroundImage: (image) =>
-    set({ backgroundImage: image }),
+  setBackgroundImage: (image) => set({ backgroundImage: image }),
 
-  setBackgroundColor: (color) =>
-    set({ backgroundColor: color }),
+  setBackgroundColor: (color) => set({ backgroundColor: color }),
 
-  setBackgroundFilter: (filter) =>
-    set({ backgroundFilter: filter }),
+  setBackgroundFilter: (filter) => set({ backgroundFilter: filter }),
 
   setBackgroundFilterIntensity: (intensity) =>
     set({ backgroundFilterIntensity: intensity }),
@@ -192,7 +195,7 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
   updateTextElement: (id, updates) => {
     set((state) => ({
       textElements: state.textElements.map((el) =>
-        el.id === id ? { ...el, ...updates } : el
+        el.id === id ? { ...el, ...updates } : el,
       ),
     }));
   },
@@ -206,8 +209,7 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
     get().saveToHistory();
   },
 
-  selectTextElement: (id) =>
-    set({ selectedTextId: id }),
+  selectTextElement: (id) => set({ selectedTextId: id }),
 
   // Sticker actions
   addStickerElement: (emoji, x = 100, y = 200) => {
@@ -230,7 +232,7 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
   updateStickerElement: (id, updates) => {
     set((state) => ({
       stickerElements: state.stickerElements.map((el) =>
-        el.id === id ? { ...el, ...updates } : el
+        el.id === id ? { ...el, ...updates } : el,
       ),
     }));
   },
@@ -238,14 +240,14 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
   deleteStickerElement: (id) => {
     set((state) => ({
       stickerElements: state.stickerElements.filter((el) => el.id !== id),
-      selectedStickerId: state.selectedStickerId === id ? null : state.selectedStickerId,
+      selectedStickerId:
+        state.selectedStickerId === id ? null : state.selectedStickerId,
     }));
 
     get().saveToHistory();
   },
 
-  selectStickerElement: (id) =>
-    set({ selectedStickerId: id }),
+  selectStickerElement: (id) => set({ selectedStickerId: id }),
 
   // Drawing actions
   addDrawingPath: (path) => {
@@ -266,11 +268,9 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
   },
 
   // UI actions
-  setCurrentTool: (tool) =>
-    set({ currentTool: tool }),
+  setCurrentTool: (tool) => set({ currentTool: tool }),
 
-  setCurrentColor: (color) =>
-    set({ currentColor: color }),
+  setCurrentColor: (color) => set({ currentColor: color }),
 
   toggleColorPicker: () =>
     set((state) => ({ showColorPicker: !state.showColorPicker })),
@@ -359,8 +359,7 @@ export const useStoryEditorStore = create<StoryEditorState>((set, get) => ({
   setStoryDuration: (duration) =>
     set({ storyDuration: Math.max(1, Math.min(60, duration)) }),
 
-  setPrivacy: (privacy) =>
-    set({ privacy }),
+  setPrivacy: (privacy) => set({ privacy }),
 
   // Get all elements
   getAllElements: () => {

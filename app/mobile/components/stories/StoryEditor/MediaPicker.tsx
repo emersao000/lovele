@@ -56,7 +56,7 @@ export const MediaPicker: React.FC<MediaPickerProps> = ({
       if (!permission.granted) {
         Alert.alert(
           'Permission',
-          'Camera permission is required to take a photo'
+          'Camera permission is required to take a photo',
         );
         return;
       }
@@ -103,10 +103,7 @@ export const MediaPicker: React.FC<MediaPickerProps> = ({
         ) : (
           <ScrollView style={styles.content}>
             {/* Gallery Option */}
-            <Pressable
-              style={styles.optionButton}
-              onPress={pickFromGallery}
-            >
+            <Pressable style={styles.optionButton} onPress={pickFromGallery}>
               <View style={styles.optionIconContainer}>
                 <MaterialIcons name="image" size={48} color="#FFFFFF" />
               </View>
@@ -120,10 +117,7 @@ export const MediaPicker: React.FC<MediaPickerProps> = ({
             </Pressable>
 
             {/* Camera Option */}
-            <Pressable
-              style={styles.optionButton}
-              onPress={pickFromCamera}
-            >
+            <Pressable style={styles.optionButton} onPress={pickFromCamera}>
               <View style={styles.optionIconContainer}>
                 <MaterialIcons name="photo-camera" size={48} color="#FFFFFF" />
               </View>
@@ -137,10 +131,7 @@ export const MediaPicker: React.FC<MediaPickerProps> = ({
             </Pressable>
 
             {/* Color Background Option */}
-            <Pressable
-              style={styles.optionButton}
-              onPress={onClose}
-            >
+            <Pressable style={styles.optionButton} onPress={onClose}>
               <View style={styles.optionIconContainer}>
                 <MaterialIcons name="palette" size={48} color="#FFFFFF" />
               </View>
@@ -172,10 +163,7 @@ export const MediaPicker: React.FC<MediaPickerProps> = ({
           </ScrollView>
         )}
 
-        <Pressable
-          style={styles.closeButton}
-          onPress={onClose}
-        >
+        <Pressable style={styles.closeButton} onPress={onClose}>
           <Text style={styles.closeButtonText}>Close</Text>
         </Pressable>
       </SafeAreaView>

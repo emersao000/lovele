@@ -79,7 +79,11 @@ export const TextElement: React.FC<TextElementProps> = ({
     fontFamily: fontFamilyMap[element.fontFamily],
     textAlign: element.textAlign as 'auto' | 'left' | 'right' | 'center',
     backgroundColor: element.backgroundColor
-      ? `${element.backgroundColor}${Math.round((element.backgroundOpacity || 0.8) * 255).toString(16).padStart(2, '0')}`
+      ? `${element.backgroundColor}${Math.round(
+          (element.backgroundOpacity || 0.8) * 255,
+        )
+          .toString(16)
+          .padStart(2, '0')}`
       : 'transparent',
     paddingHorizontal: 8,
     paddingVertical: 4,
@@ -95,10 +99,7 @@ export const TextElement: React.FC<TextElementProps> = ({
         ]}
         onTouchStart={() => onSelect(element.id)}
       >
-        <Text
-          style={textStyle}
-          numberOfLines={0}
-        >
+        <Text style={textStyle} numberOfLines={0}>
           {element.text}
         </Text>
       </Animated.View>

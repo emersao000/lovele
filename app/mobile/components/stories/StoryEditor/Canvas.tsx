@@ -118,10 +118,7 @@ export const Canvas: React.FC<CanvasProps> = ({
 
   return (
     <View
-      style={[
-        styles.container,
-        { width: canvasWidth, height: canvasHeight },
-      ]}
+      style={[styles.container, { width: canvasWidth, height: canvasHeight }]}
     >
       {/* Background */}
       {renderBackground()}

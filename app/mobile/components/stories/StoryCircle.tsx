@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Pressable,
-  Text,
-  Image,
-} from 'react-native';
+import { View, StyleSheet, Pressable, Text, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface StoryCircleProps {
@@ -26,26 +20,12 @@ export const StoryCircle: React.FC<StoryCircleProps> = ({
   onPress,
 }) => {
   return (
-    <Pressable
-      style={styles.container}
-      onPress={() => onPress(id)}
-    >
-      <View
-        style={[
-          styles.circle,
-          !isViewed && styles.circleBorder,
-        ]}
-      >
+    <Pressable style={styles.container} onPress={() => onPress(id)}>
+      <View style={[styles.circle, !isViewed && styles.circleBorder]}>
         {storyImage ? (
-          <Image
-            source={{ uri: storyImage }}
-            style={styles.image}
-          />
+          <Image source={{ uri: storyImage }} style={styles.image} />
         ) : userImage ? (
-          <Image
-            source={{ uri: userImage }}
-            style={styles.image}
-          />
+          <Image source={{ uri: userImage }} style={styles.image} />
         ) : (
           <View style={styles.placeholder}>
             <MaterialIcons name="person" size={24} color="#FFFFFF" />

@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  SafeAreaView,
-  Pressable,
-  Text,
-} from 'react-native';
+import { View, StyleSheet, SafeAreaView, Pressable, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { StoryEditor } from '../StoryEditor';
 
@@ -20,10 +14,7 @@ export const EditorScreen: React.FC<EditorScreenProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <StoryEditor
-        onStoryCreate={onPreview}
-        onCancel={onCancel}
-      />
+      <StoryEditor onStoryCreate={onPreview} onCancel={onCancel} />
     </View>
   );
 };

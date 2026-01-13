@@ -178,16 +178,10 @@ export const PreviewScreen: React.FC<PreviewScreenProps> = ({
 
       {/* Action Buttons */}
       <View style={styles.footer}>
-        <Pressable
-          style={styles.cancelButton}
-          onPress={onBack}
-        >
+        <Pressable style={styles.cancelButton} onPress={onBack}>
           <Text style={styles.cancelButtonText}>Edit</Text>
         </Pressable>
-        <Pressable
-          style={styles.publishButton}
-          onPress={handlePublish}
-        >
+        <Pressable style={styles.publishButton} onPress={handlePublish}>
           <MaterialIcons name="upload" size={20} color="#FFFFFF" />
           <Text style={styles.publishButtonText}>Publish Story</Text>
         </Pressable>

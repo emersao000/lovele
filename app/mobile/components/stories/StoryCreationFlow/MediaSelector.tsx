@@ -50,7 +50,7 @@ export const MediaSelector: React.FC<MediaSelectorProps> = ({
       if (!permission.granted) {
         Alert.alert(
           'Permission',
-          'Camera permission is required to take a photo'
+          'Camera permission is required to take a photo',
         );
         return;
       }
@@ -112,24 +112,19 @@ export const MediaSelector: React.FC<MediaSelectorProps> = ({
 
           <Text style={styles.subtitle}>Choose Your Background</Text>
           <Text style={styles.description}>
-            Start by selecting a photo from your gallery or take a new one with your camera
+            Start by selecting a photo from your gallery or take a new one with
+            your camera
           </Text>
 
           <View style={styles.optionsContainer}>
-            <Pressable
-              style={styles.option}
-              onPress={pickFromGallery}
-            >
+            <Pressable style={styles.option} onPress={pickFromGallery}>
               <View style={styles.optionIcon}>
                 <MaterialIcons name="photo-library" size={40} color="#FFFFFF" />
               </View>
               <Text style={styles.optionText}>From Gallery</Text>
             </Pressable>
 
-            <Pressable
-              style={styles.option}
-              onPress={pickFromCamera}
-            >
+            <Pressable style={styles.option} onPress={pickFromCamera}>
               <View style={styles.optionIcon}>
                 <MaterialIcons name="photo-camera" size={40} color="#FFFFFF" />
               </View>
@@ -137,10 +132,7 @@ export const MediaSelector: React.FC<MediaSelectorProps> = ({
             </Pressable>
           </View>
 
-          <Pressable
-            style={styles.skipButton}
-            onPress={skipMedia}
-          >
+          <Pressable style={styles.skipButton} onPress={skipMedia}>
             <Text style={styles.skipButtonText}>Or start with blank</Text>
           </Pressable>
         </View>

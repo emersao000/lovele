@@ -11,7 +11,8 @@ type CreateStep = 'media' | 'editor' | 'preview';
 
 export default function CreateStoryPage() {
   const [currentStep, setCurrentStep] = useState<CreateStep>('media');
-  const [selectedMedia, setSelectedMedia] = useState<ImagePicker.ImagePickerAsset | null>(null);
+  const [selectedMedia, setSelectedMedia] =
+    useState<ImagePicker.ImagePickerAsset | null>(null);
   const { resetEditor } = useStoryEditorStore();
 
   const handleMediaSelect = (image: ImagePicker.ImagePickerAsset) => {
@@ -34,10 +35,10 @@ export default function CreateStoryPage() {
   const handlePublish = async (story: any) => {
     // TODO: Save story to database
     console.log('Publishing story:', story);
-    
+
     // Reset editor
     resetEditor();
-    
+
     // Navigate back to stories list
     router.replace('/stories');
   };

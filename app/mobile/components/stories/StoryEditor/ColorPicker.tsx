@@ -65,10 +65,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
           {/* Custom Color Input */}
           <View style={styles.customColorSection}>
             <View
-              style={[
-                styles.colorPreview,
-                { backgroundColor: customColor },
-              ]}
+              style={[styles.colorPreview, { backgroundColor: customColor }]}
             />
             <TextInput
               style={styles.colorInput}
@@ -129,10 +126,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
           </View>
         </ScrollView>
 
-        <Pressable
-          style={styles.confirmButton}
-          onPress={onClose}
-        >
+        <Pressable style={styles.confirmButton} onPress={onClose}>
           <Text style={styles.confirmButtonText}>Done</Text>
         </Pressable>
       </SafeAreaView>

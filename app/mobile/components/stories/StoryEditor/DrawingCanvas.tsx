@@ -1,9 +1,5 @@
 import React, { useRef } from 'react';
-import {
-  View,
-  StyleSheet,
-  PanResponder,
-} from 'react-native';
+import { View, StyleSheet, PanResponder } from 'react-native';
 import { DrawingPath } from '@/stores/storyEditorStore';
 import Svg, { Polyline } from 'react-native-svg';
 
@@ -54,7 +50,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
           currentPathRef.current = [];
         }
       },
-    })
+    }),
   ).current;
 
   return (
@@ -62,11 +58,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
       style={[styles.container, { width: canvasWidth, height: canvasHeight }]}
       {...panResponder.panHandlers}
     >
-      <Svg
-        width={canvasWidth}
-        height={canvasHeight}
-        style={styles.svg}
-      >
+      <Svg width={canvasWidth} height={canvasHeight} style={styles.svg}>
         {paths.map((path) => (
           <Polyline
             key={path.id}

@@ -84,7 +84,9 @@ export const FontPicker: React.FC<FontPickerProps> = ({
           </View>
 
           {/* Font Size Slider */}
-          <Text style={styles.sectionTitle}>Font Size: {currentFontSize}px</Text>
+          <Text style={styles.sectionTitle}>
+            Font Size: {currentFontSize}px
+          </Text>
           <View style={styles.sliderContainer}>
             <Text style={styles.sliderLabel}>12</Text>
             <View style={styles.sliderTrack}>
@@ -102,7 +104,9 @@ export const FontPicker: React.FC<FontPickerProps> = ({
           <View style={styles.fontSizeButtons}>
             <Pressable
               style={styles.decreaseButton}
-              onPress={() => onFontSizeChange(Math.max(12, currentFontSize - 4))}
+              onPress={() =>
+                onFontSizeChange(Math.max(12, currentFontSize - 4))
+              }
             >
               <MaterialIcons name="remove" size={20} color="#FFFFFF" />
             </Pressable>
@@ -117,7 +121,9 @@ export const FontPicker: React.FC<FontPickerProps> = ({
             />
             <Pressable
               style={styles.increaseButton}
-              onPress={() => onFontSizeChange(Math.min(64, currentFontSize + 4))}
+              onPress={() =>
+                onFontSizeChange(Math.min(64, currentFontSize + 4))
+              }
             >
               <MaterialIcons name="add" size={20} color="#FFFFFF" />
             </Pressable>
@@ -182,10 +188,7 @@ export const FontPicker: React.FC<FontPickerProps> = ({
           </View>
         </ScrollView>
 
-        <Pressable
-          style={styles.confirmButton}
-          onPress={onClose}
-        >
+        <Pressable style={styles.confirmButton} onPress={onClose}>
           <Text style={styles.confirmButtonText}>Done</Text>
         </Pressable>
       </SafeAreaView>
