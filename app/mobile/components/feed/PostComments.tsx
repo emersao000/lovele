@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import { Card, Avatar } from '../ui';
 import { Heart, Reply } from 'lucide-react-native';
 
@@ -36,20 +42,16 @@ function CommentItem({
 }: Comment) {
   return (
     <View style={styles.commentItem}>
-      <Avatar
-        source={author.avatar}
-        initials={author.initials}
-        size="sm"
-      />
-      
+      <Avatar source={author.avatar} initials={author.initials} size="sm" />
+
       <View style={styles.commentContent}>
         <View style={styles.commentHeader}>
           <Text style={styles.authorName}>{author.name}</Text>
           <Text style={styles.timestamp}>{createdAt}</Text>
         </View>
-        
+
         <Text style={styles.commentText}>{content}</Text>
-        
+
         <View style={styles.commentActions}>
           <TouchableOpacity style={styles.actionButton} onPress={onLike}>
             <Heart
@@ -59,7 +61,7 @@ function CommentItem({
             />
             <Text style={styles.likeText}>{likes}</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity style={styles.actionButton} onPress={onReply}>
             <Reply size={14} color="#999999" />
             <Text style={styles.replyText}>Responder</Text>
@@ -77,10 +79,8 @@ export function PostComments({
 }: PostCommentsProps) {
   return (
     <Card style={styles.card}>
-      <Text style={styles.commentsTitle}>
-        Comentários ({comments.length})
-      </Text>
-      
+      <Text style={styles.commentsTitle}>Comentários ({comments.length})</Text>
+
       <FlatList
         data={comments}
         renderItem={({ item }) => <CommentItem {...item} />}

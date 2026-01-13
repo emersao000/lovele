@@ -9,7 +9,11 @@ interface StoryEditorProps {
   loading?: boolean;
 }
 
-export function StoryEditor({ onSubmit, onClose, loading = false }: StoryEditorProps) {
+export function StoryEditor({
+  onSubmit,
+  onClose,
+  loading = false,
+}: StoryEditorProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleSelectImage = () => {
@@ -29,7 +33,10 @@ export function StoryEditor({ onSubmit, onClose, loading = false }: StoryEditorP
     <View style={styles.container}>
       {!selectedImage ? (
         <View style={styles.emptyContainer}>
-          <TouchableOpacity style={styles.cameraButton} onPress={handleSelectImage}>
+          <TouchableOpacity
+            style={styles.cameraButton}
+            onPress={handleSelectImage}
+          >
             <Camera size={48} color="#FFFFFF" />
           </TouchableOpacity>
           <Text style={styles.emptyText}>Toque para adicionar uma foto</Text>

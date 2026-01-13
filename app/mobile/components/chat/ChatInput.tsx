@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+} from 'react-native';
 import { Send, Plus, Smile } from 'lucide-react-native';
 
 interface ChatInputProps {
@@ -58,7 +64,10 @@ export function ChatInput({
 
         <TouchableOpacity
           onPress={handleSend}
-          style={[styles.sendButton, !message.trim() && styles.sendButtonDisabled]}
+          style={[
+            styles.sendButton,
+            !message.trim() && styles.sendButtonDisabled,
+          ]}
           disabled={!message.trim() || loading}
         >
           <Send size={20} color={message.trim() ? '#007AFF' : '#CCCCCC'} />

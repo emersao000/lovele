@@ -18,18 +18,14 @@ export function ProfileActions({
   onReportPress,
 }: ProfileActionsProps) {
   const handleLogout = () => {
-    Alert.alert(
-      'Sair',
-      'Você tem certeza que deseja sair?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Sair',
-          style: 'destructive',
-          onPress: onLogoutPress,
-        },
-      ]
-    );
+    Alert.alert('Sair', 'Você tem certeza que deseja sair?', [
+      { text: 'Cancelar', style: 'cancel' },
+      {
+        text: 'Sair',
+        style: 'destructive',
+        onPress: onLogoutPress,
+      },
+    ]);
   };
 
   return (

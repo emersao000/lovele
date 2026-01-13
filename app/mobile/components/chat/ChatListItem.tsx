@@ -30,11 +30,7 @@ export function ChatListItem({
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.avatarContainer}>
-        <Avatar
-          source={user.avatar}
-          initials={user.initials}
-          size="md"
-        />
+        <Avatar source={user.avatar} initials={user.initials} size="md" />
         {isOnline && <View style={styles.onlineIndicator} />}
       </View>
 

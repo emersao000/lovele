@@ -46,7 +46,8 @@ export function RecadoEditor({ onSubmit, loading = false }: RecadoEditorProps) {
             <Text
               style={[
                 styles.categoryButtonText,
-                selectedCategory === category && styles.categoryButtonTextActive,
+                selectedCategory === category &&
+                  styles.categoryButtonTextActive,
               ]}
             >
               {category}

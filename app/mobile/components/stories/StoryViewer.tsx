@@ -49,7 +49,7 @@ export function StoryViewer({
             return 100;
           }
         }
-        return prev + (100 / (storyDuration / 100));
+        return prev + 100 / (storyDuration / 100);
       });
     }, 100);
 
@@ -86,7 +86,8 @@ export function StoryViewer({
             style={[
               styles.progressBar,
               {
-                opacity: index < currentIndex ? 1 : index === currentIndex ? 1 : 0.3,
+                opacity:
+                  index < currentIndex ? 1 : index === currentIndex ? 1 : 0.3,
               },
             ]}
           >
@@ -94,7 +95,12 @@ export function StoryViewer({
               style={[
                 styles.progressFill,
                 {
-                  width: index === currentIndex ? `${progress}%` : index < currentIndex ? '100%' : '0%',
+                  width:
+                    index === currentIndex
+                      ? `${progress}%`
+                      : index < currentIndex
+                        ? '100%'
+                        : '0%',
                 },
               ]}
             />
@@ -105,11 +111,7 @@ export function StoryViewer({
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.authorInfo}>
-          <Avatar
-            source={author.avatar}
-            initials={author.initials}
-            size="sm"
-          />
+          <Avatar source={author.avatar} initials={author.initials} size="sm" />
           <Text style={styles.authorName}>{author.name}</Text>
         </View>
         <TouchableOpacity onPress={onClose}>

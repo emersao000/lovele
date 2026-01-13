@@ -24,10 +24,7 @@ export function StoryCircle({
 }: StoryCircleProps) {
   if (isAddStory) {
     return (
-      <TouchableOpacity
-        style={styles.container}
-        onPress={() => onPress(id)}
-      >
+      <TouchableOpacity style={styles.container} onPress={() => onPress(id)}>
         <View style={styles.addStoryCircle}>
           <Plus size={24} color="#FFFFFF" />
         </View>
@@ -37,21 +34,14 @@ export function StoryCircle({
   }
 
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => onPress(id)}
-    >
+    <TouchableOpacity style={styles.container} onPress={() => onPress(id)}>
       <View
         style={[
           styles.storyBorder,
           hasUnwatchedStory && styles.storyBorderActive,
         ]}
       >
-        <Avatar
-          source={avatar}
-          initials={initials}
-          size="lg"
-        />
+        <Avatar source={avatar} initials={initials} size="lg" />
       </View>
       <Text style={styles.name} numberOfLines={1}>
         {name}

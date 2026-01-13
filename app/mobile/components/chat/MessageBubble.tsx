@@ -24,10 +24,7 @@ export function MessageBubble({
   return (
     <View style={[styles.container, isOwn && styles.containerOwn]}>
       <View
-        style={[
-          styles.bubble,
-          isOwn ? styles.bubbleOwn : styles.bubbleOther,
-        ]}
+        style={[styles.bubble, isOwn ? styles.bubbleOwn : styles.bubbleOther]}
       >
         {image && (
           <Image
@@ -36,9 +33,7 @@ export function MessageBubble({
             resizeMode="cover"
           />
         )}
-        <Text style={[styles.text, isOwn && styles.textOwn]}>
-          {content}
-        </Text>
+        <Text style={[styles.text, isOwn && styles.textOwn]}>{content}</Text>
       </View>
 
       <View style={[styles.footer, isOwn && styles.footerOwn]}>
@@ -48,9 +43,7 @@ export function MessageBubble({
             {status === 'sending' && (
               <Text style={styles.sendingText}>Enviando...</Text>
             )}
-            {status === 'sent' && (
-              <Check size={12} color="#999999" />
-            )}
+            {status === 'sent' && <Check size={12} color="#999999" />}
             {(status === 'delivered' || status === 'read') && (
               <CheckCheck
                 size={12}

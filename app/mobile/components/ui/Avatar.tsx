@@ -9,12 +9,7 @@ interface AvatarProps {
   style?: any;
 }
 
-export function Avatar({
-  source,
-  initials,
-  size = 'md',
-  style,
-}: AvatarProps) {
+export function Avatar({ source, initials, size = 'md', style }: AvatarProps) {
   const sizeStyles = {
     xs: { width: 28, height: 28, fontSize: 10 },
     sm: { width: 36, height: 36, fontSize: 12 },

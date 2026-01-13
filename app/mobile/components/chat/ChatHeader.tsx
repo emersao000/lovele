@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import { Avatar } from '../ui';
 import { ArrowLeft, Phone, Video, MoreVertical } from 'lucide-react-native';
 
@@ -33,11 +39,7 @@ export function ChatHeader({
           </TouchableOpacity>
 
           <View style={styles.userInfo}>
-            <Avatar
-              source={avatar}
-              initials={initials}
-              size="sm"
-            />
+            <Avatar source={avatar} initials={initials} size="sm" />
 
             <View style={styles.nameContainer}>
               <Text style={styles.name}>{name}</Text>

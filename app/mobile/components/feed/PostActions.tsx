@@ -23,9 +23,7 @@ export function PostActions({
           color="#007AFF"
           fill={isSaved ? '#007AFF' : 'transparent'}
         />
-        <Text style={styles.label}>
-          {isSaved ? 'Salvo' : 'Salvar'}
-        </Text>
+        <Text style={styles.label}>{isSaved ? 'Salvo' : 'Salvar'}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.action} onPress={onShare}>

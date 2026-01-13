@@ -14,7 +14,9 @@ export function Loading({
   text,
   fullScreen = false,
 }: LoadingProps) {
-  const containerStyle = fullScreen ? styles.fullScreenContainer : styles.container;
+  const containerStyle = fullScreen
+    ? styles.fullScreenContainer
+    : styles.container;
 
   return (
     <View style={containerStyle}>

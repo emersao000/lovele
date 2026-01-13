@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, StyleSheet, Text, ScrollView } from 'react-native';
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  ScrollView,
+} from 'react-native';
 import { X } from 'lucide-react-native';
 
 interface MediaItem {
@@ -28,7 +35,8 @@ export function MediaPreview({
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>
-          {media.length} {media.length === 1 ? 'arquivo' : 'arquivos'} selecionado(s)
+          {media.length} {media.length === 1 ? 'arquivo' : 'arquivos'}{' '}
+          selecionado(s)
         </Text>
         {onClearAll && (
           <TouchableOpacity onPress={onClearAll}>

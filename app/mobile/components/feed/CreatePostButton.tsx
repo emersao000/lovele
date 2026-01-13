@@ -21,16 +21,10 @@ export function CreatePostButton({
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Avatar
-          source={userAvatar}
-          initials={userInitials}
-          size="md"
-        />
-        
+        <Avatar source={userAvatar} initials={userInitials} size="md" />
+
         <TouchableOpacity style={styles.inputButton} onPress={onPress}>
-          <Text style={styles.placeholder}>
-            No que você está pensando?
-          </Text>
+          <Text style={styles.placeholder}>No que você está pensando?</Text>
         </TouchableOpacity>
       </View>
 

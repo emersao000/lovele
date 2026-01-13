@@ -40,15 +40,13 @@ export function ProfileHeader({
           resizeMode="cover"
         />
       )}
-      <View style={[styles.coverPlaceholder, !coverImage && styles.coverDefault]} />
+      <View
+        style={[styles.coverPlaceholder, !coverImage && styles.coverDefault]}
+      />
 
       {/* Avatar */}
       <View style={styles.avatarContainer}>
-        <Avatar
-          source={avatar}
-          initials={initials}
-          size="xl"
-        />
+        <Avatar source={avatar} initials={initials} size="xl" />
       </View>
 
       {/* User Info */}
@@ -76,7 +74,10 @@ export function ProfileHeader({
               size="md"
               style={styles.actionButton}
             />
-            <TouchableOpacity style={styles.iconButton} onPress={onMessagePress}>
+            <TouchableOpacity
+              style={styles.iconButton}
+              onPress={onMessagePress}
+            >
               <MessageCircle size={20} color="#007AFF" />
             </TouchableOpacity>
           </View>

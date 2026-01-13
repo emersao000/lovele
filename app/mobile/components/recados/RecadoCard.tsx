@@ -37,11 +37,7 @@ export function RecadoCard({
     <Card style={styles.card} variant="outlined">
       <View style={styles.header}>
         <View style={styles.authorInfo}>
-          <Avatar
-            source={author.avatar}
-            initials={author.initials}
-            size="sm"
-          />
+          <Avatar source={author.avatar} initials={author.initials} size="sm" />
           <View style={styles.authorDetails}>
             <Text style={styles.authorName}>{author.name}</Text>
             <Text style={styles.timestamp}>{createdAt}</Text>

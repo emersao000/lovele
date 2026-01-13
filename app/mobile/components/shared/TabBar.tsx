@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import { Home, Heart, MessageCircle, Users, User } from 'lucide-react-native';
 
 type TabName = 'home' | 'explore' | 'messages' | 'people' | 'profile';

@@ -1,7 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Card, Avatar } from '../ui';
-import { MessageCircle, Heart, Share2, MoreVertical } from 'lucide-react-native';
+import {
+  MessageCircle,
+  Heart,
+  Share2,
+  MoreVertical,
+} from 'lucide-react-native';
 
 export interface Post {
   id: string;
@@ -44,11 +49,7 @@ export function PostCard({
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.authorInfo}>
-          <Avatar
-            source={author.avatar}
-            initials={author.initials}
-            size="md"
-          />
+          <Avatar source={author.avatar} initials={author.initials} size="md" />
           <View style={styles.authorDetails}>
             <Text style={styles.authorName}>{author.name}</Text>
             <Text style={styles.timestamp}>{createdAt}</Text>
@@ -85,7 +86,9 @@ export function PostCard({
             color={isLiked ? '#FF3B30' : '#666666'}
             fill={isLiked ? '#FF3B30' : 'transparent'}
           />
-          <Text style={[styles.actionLabel, isLiked && styles.actionLabelActive]}>
+          <Text
+            style={[styles.actionLabel, isLiked && styles.actionLabelActive]}
+          >
             Curtir
           </Text>
         </TouchableOpacity>

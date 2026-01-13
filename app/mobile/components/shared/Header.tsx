@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Platform, SafeAreaView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  SafeAreaView,
+} from 'react-native';
 import { ArrowLeft, Settings, Bell } from 'lucide-react-native';
 
 interface HeaderProps {
@@ -40,7 +47,10 @@ export function Header({
 
         <View style={styles.rightSection}>
           {showNotifications && (
-            <TouchableOpacity onPress={onNotificationsPress} style={styles.iconButton}>
+            <TouchableOpacity
+              onPress={onNotificationsPress}
+              style={styles.iconButton}
+            >
               <View style={styles.notificationBadge}>
                 <Bell size={24} color="#000000" />
                 {notificationCount > 0 && (
@@ -54,7 +64,10 @@ export function Header({
             </TouchableOpacity>
           )}
           {showSettings && (
-            <TouchableOpacity onPress={onSettingsPress} style={styles.iconButton}>
+            <TouchableOpacity
+              onPress={onSettingsPress}
+              style={styles.iconButton}
+            >
               <Settings size={24} color="#000000" />
             </TouchableOpacity>
           )}

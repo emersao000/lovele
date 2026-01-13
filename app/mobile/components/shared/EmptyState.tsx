@@ -24,11 +24,11 @@ export function EmptyState({
       <View style={styles.iconContainer}>
         {icon || <Inbox size={48} color="#CCCCCC" />}
       </View>
-      
+
       <Text style={styles.title}>{title}</Text>
-      
+
       {description && <Text style={styles.description}>{description}</Text>}
-      
+
       {actionText && onAction && (
         <TouchableOpacity style={styles.actionButton} onPress={onAction}>
           <Text style={styles.actionText}>{actionText}</Text>
