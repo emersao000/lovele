@@ -1,84 +1,98 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
-import { Avatar } from '../ui';
-import { Plus } from 'lucide-react-native';
+import {
+  View,
+  StyleSheet,
+  Pressable,
+  Text,
+  Image,
+} from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 interface StoryCircleProps {
   id: string;
-  name: string;
-  avatar?: string;
-  initials?: string;
-  hasUnwatchedStory?: boolean;
-  isAddStory?: boolean;
+  userName: string;
+  userImage?: string;
+  storyImage?: string;
+  isViewed?: boolean;
   onPress: (id: string) => void;
 }
 
-export function StoryCircle({
+export const StoryCircle: React.FC<StoryCircleProps> = ({
   id,
-  name,
-  avatar,
-  initials,
-  hasUnwatchedStory = false,
-  isAddStory = false,
+  userName,
+  userImage,
+  storyImage,
+  isViewed = false,
   onPress,
-}: StoryCircleProps) {
-  if (isAddStory) {
-    return (
-      <TouchableOpacity style={styles.container} onPress={() => onPress(id)}>
-        <View style={styles.addStoryCircle}>
-          <Plus size={24} color="#FFFFFF" />
-        </View>
-        <Text style={styles.name}>Minha história</Text>
-      </TouchableOpacity>
-    );
-  }
-
+}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => onPress(id)}>
+    <Pressable
+      style={styles.container}
+      onPress={() => onPress(id)}
+    >
       <View
         style={[
-          styles.storyBorder,
-          hasUnwatchedStory && styles.storyBorderActive,
+          styles.circle,
+          !isViewed && styles.circleBorder,
         ]}
       >
-        <Avatar source={avatar} initials={initials} size="lg" />
+        {storyImage ? (
+          <Image
+            source={{ uri: storyImage }}
+            style={styles.image}
+          />
+        ) : userImage ? (
+          <Image
+            source={{ uri: userImage }}
+            style={styles.image}
+          />
+        ) : (
+          <View style={styles.placeholder}>
+            <MaterialIcons name="person" size={24} color="#FFFFFF" />
+          </View>
+        )}
       </View>
       <Text style={styles.name} numberOfLines={1}>
-        {name}
+        {userName}
       </Text>
-    </TouchableOpacity>
+    </Pressable>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginRight: 16,
+    marginHorizontal: 8,
+  },
+  circle: {
     width: 70,
-  },
-  storyBorder: {
-    borderWidth: 2,
-    borderColor: '#E5E5EA',
-    borderRadius: 999,
-    padding: 2,
+    height: 70,
+    borderRadius: 35,
+    backgroundColor: '#DDDDDD',
     marginBottom: 8,
-  },
-  storyBorderActive: {
-    borderColor: '#007AFF',
-  },
-  addStoryCircle: {
-    width: 64,
-    height: 64,
-    borderRadius: 999,
-    backgroundColor: '#007AFF',
-    justifyContent: 'center',
+    overflow: 'hidden',
     alignItems: 'center',
-    marginBottom: 8,
+    justifyContent: 'center',
+  },
+  circleBorder: {
+    borderWidth: 3,
+    borderColor: '#667eea',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  placeholder: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#667eea',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   name: {
-    fontSize: 11,
-    fontWeight: '500',
+    fontSize: 12,
     color: '#333333',
+    maxWidth: 70,
     textAlign: 'center',
   },
 });
